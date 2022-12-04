@@ -28,3 +28,34 @@ def input_options(opt, prompt):
                 print("\n>> Ok! <<")
                 break 
     return value
+
+# Function 'opt_query' to build the query according with options chosen
+def opt_query(optType, optChosen):
+    if optType == 1:
+        match optChosen:
+            case 1:
+                return ""
+            case 2:
+                return "census_year == 2011 and "
+            case 3:
+                return "census_year == 2016 and "
+    elif optType == 2:
+        match optChosen:
+            case 1:
+                return "gender == 'Both sexes' and " 
+            case 2:
+                return "gender == 'Female' and " 
+            case 3:
+                return "gender == 'Male' and " 
+    elif optType == 3:
+        match optChosen:
+            case 1:
+                return "age_group == 'All ages' and " 
+            case 2:
+                return "age_group != 'All ages' and "
+    elif optType == 4:
+        match optChosen:
+            case 1:
+                return "county_city == 'State'" 
+            case 2:
+                return "county_city != 'State'"
