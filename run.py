@@ -8,3 +8,23 @@
 import pandas as pd
 import os
 from datetime import datetime
+
+# Function 'input_options' to validade de options chosen
+def input_options(opt, prompt):
+    while True:
+        try:
+            value = int(input(prompt))
+        except ValueError:
+            print("\n>> Sorry! You need to choose a given number. <<")
+            continue
+        if value <= 0 or value >3:
+            print("\n>> Sorry! You need to choose a given number. <<")
+            continue
+        else:
+            if opt == 2 and value == 3:
+                print("\n>> Sorry! You need to choose a given number. <<")
+                continue
+            else:
+                print("\n>> Ok! <<")
+                break 
+    return value
