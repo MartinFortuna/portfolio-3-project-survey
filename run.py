@@ -119,3 +119,21 @@ cYear = opt_query(1, optYear)
 cGender = opt_query(2, optGender)
 cAge = opt_query(3, optAge)
 cRegion = opt_query(4, optRegion)
+
+# Concatenate parameter to the query
+query = cYear + cGender + cAge + cRegion
+
+# Load dataframe
+census_ie = load_csv()
+
+# If the dataframe is empty, it's because a exception happened at 'load_csv' function.
+# and the program will display a message
+if census_ie.empty:
+    print(">> Sorry! Error loading file! \n>> Make sure que file 'census_ie.csv' is on the '" + os.getcwd() + "' directory and try again.")
+else:
+    # Load a dataframe according to the query
+    dfResult = census_ie.query(query)
+    # Display the results
+    print(dfResult)
+    # Display options to save file 
+    optFile = input_saveFile('\nDo you want do save the data into a file? \n(1 = Yes, 2 = No): ')
