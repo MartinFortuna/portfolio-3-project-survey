@@ -59,3 +59,19 @@ def opt_query(optType, optChosen):
                 return "county_city == 'State'" 
             case 2:
                 return "county_city != 'State'"
+
+# Function 'load_csv' to read csv and put the data into a dataframe
+def load_csv():
+    # Select specific columns to Analyse
+    selectCols = ['Sex', 'County and City', 'CensusYear', 'Age Group', 'VALUE']
+    # Load .csv file
+    try:
+        df = pd.read_csv('./census_ie.csv', usecols= selectCols)
+    except FileNotFoundError:
+        df = pd.DataFrame()
+        return df
+    # Rename Columns
+    df.rename(columns = {'Sex':'gender', 'County and City': 'county_city', 'CensusYear':'census_year'
+                         ,'Age Group': 'age_group', 'VALUE':'total'}, inplace = True)
+    return df
+
