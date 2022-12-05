@@ -113,3 +113,9 @@ optGender = input_options(3, '\nGender - options: \n 1 - All genders \n 2 - Fema
 optAge = input_options(2, '\nAge - options: \n 1 - All ages \n 2 - Ages by group \nChoose a number for "Age" (1 or 2): ')
 optRegion = input_options(2, '\nRegion - options: \n 1 - All regions \n 2 - Regions by County/City \nChoose a number for "Region" (1 or 2): ')
 print("\n<< Processing your data ....................... >> \n ")
+
+# Build the query according with options chosen
+cYear = opt_query(1, optYear)
+cGender = opt_query(2, optGender)
+cAge = opt_query(3, optAge)
+cRegion = opt_query(4, optRegion)
