@@ -75,3 +75,26 @@ def load_csv():
                          ,'Age Group': 'age_group', 'VALUE':'total'}, inplace = True)
     return df
 
+# Function 'input_saveFile' to validade option chosen and export .csv file
+def input_saveFile(prompt):
+    while True:
+        try:
+            value = int(input(prompt))
+        except ValueError:
+            print("\n>> Sorry! Choose a valid option. <<")
+            continue
+        if value <= 0 or value >2:
+            print("\n>> Sorry! Choose a valid option. <<")
+            continue
+        else:
+            if value == 1:
+                print("\n>> Ok! \n>> Saving file ... ")
+                fPath = os.getcwd() #get the file path
+                fileName = "result_" + datetime.now().strftime("%m%d%y_%H%M%S") + ".csv" #build a unique name based on datetime
+                dfResult.to_csv(fileName, index=False)
+                print(">> File '" + str(fileName) + "' saved at '"+ fPath + "' directory. \n>> Bye! <<")
+                break
+            else:
+                print("\n>> Ok! Thank you for using the system. \n>> Bye! <<")
+                break        
+    return value
