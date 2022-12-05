@@ -98,3 +98,11 @@ def input_saveFile(prompt):
                 print("\n>> Ok! Thank you for using the system. \n>> Bye! <<")
                 break        
     return value
+
+# Display - Welcome message
+msgVar= '********************************************************************* \n' 
+msgVar = msgVar + "Ireland's Census: population 2011 to 2016. \n"
+msgVar = msgVar + 'Total population by:  Age Group | County/City | Gender | Census Year \n' 
+msgVar = msgVar + '********************************************************************* \n'  
+msgVar = msgVar + ("You can choose multiple options to analyse. ")
+print (msgVar)
