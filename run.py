@@ -106,3 +106,10 @@ msgVar = msgVar + 'Total population by:  Age Group | County/City | Gender | Cens
 msgVar = msgVar + '********************************************************************* \n'  
 msgVar = msgVar + ("You can choose multiple options to analyse. ")
 print (msgVar)
+
+# Display - Options to chose
+optYear = input_options(3, '\nCensus Year - options: \n 1 - Both years \n 2 - 2011 \n 3 - 2016  \nChoose a number for "Census Year" (1, 2 or 3): ')
+optGender = input_options(3, '\nGender - options: \n 1 - All genders \n 2 - Female \n 3 - Male  \nChoose a number for "Gender" (1, 2 or 3): ')
+optAge = input_options(2, '\nAge - options: \n 1 - All ages \n 2 - Ages by group \nChoose a number for "Age" (1 or 2): ')
+optRegion = input_options(2, '\nRegion - options: \n 1 - All regions \n 2 - Regions by County/City \nChoose a number for "Region" (1 or 2): ')
+print("\n<< Processing your data ....................... >> \n ")
